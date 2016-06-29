@@ -28,6 +28,8 @@ C:\> vm-windows-dev
 # Start and stop with default VM name
 C:\> vm-windows-dev start
 C:\> vm-windows-dev stop
+C:\> vm-windows-dev restart
+C:\> vm-windows-dev save
 
 C:\> vm-windows-dev attach
 C:\> vm-windows-dev sync
