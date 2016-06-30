@@ -19,9 +19,9 @@ SET PuttySession="mildronize-template"
 
 :: Sync
 SET HostKey="*"
-SET FileMaskInclude=""
-SET FileMaskExclude=*.git/; .git/;Thumbs.db
-SET LocalPath=C:\Users\Mildronize\hanuman\files
+REM SET FileMaskInclude=*
+REM SET FileMaskExclude=*.git/; .git/;Thumbs.db; *.ppk
+SET LocalPath=C:\Users\Mildronize\hanuman
 SET RemotePath=/home/mildronize/windows/
 SET Timeout=5
 
@@ -107,7 +107,9 @@ winscp.com /command ^
     "option batch abort" ^
     "option confirm off" ^
     "open sftp://%User%@%Host%:%Port% -privatekey=%PuttyPrivateKeyPath% -hostkey=%HostKey% -timeout=%Timeout%" ^
-    "synchronize remote %LocalPath% %RemotePath% -filemask='%FileMaskInclude% | %FileMaskExclude%'" ^
-    "keepuptodate %LocalPath% %RemotePath% -filemask='%FileMaskInclude% | %FileMaskExclude%'" ^
+    "synchronize remote %LocalPath% %RemotePath% " ^
+    "keepuptodate %LocalPath% %RemotePath% " ^
     "exit"
 EXIT /B 0
+
+:: synchronize remote %LocalPath% %RemotePath% -filemask='%FileMaskInclude% | %FileMaskExclude%'"
